@@ -24,6 +24,7 @@ RUN apk add --no-cache \
     curl \
     git \
     unzip \
+    postgresql-dev \
     libzip-dev \
     oniguruma-dev \
     libxml2-dev \
