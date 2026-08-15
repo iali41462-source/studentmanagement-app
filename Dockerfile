@@ -32,7 +32,7 @@ RUN apk add --no-cache \
     libjpeg-turbo-dev \
     libpng-dev \
     && docker-php-ext-install \
-    pdo_mysql \
+    pdo_pgsql \
     mbstring \
     xml \
     bcmath \
