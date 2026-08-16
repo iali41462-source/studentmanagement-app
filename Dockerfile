@@ -7,10 +7,10 @@ COPY package*.json ./
 
 RUN npm install
 
-COPY resources ./resources
-COPY public ./public
-COPY vite.config.js ./
+# Pura project frontend build stage mein copy karo
+COPY . .
 
+# Vite build
 RUN npm run build
 
 
@@ -36,7 +36,7 @@ RUN apk add --no-cache \
     libpng-dev
 
 
-# Make sure pg_config can be found
+# PostgreSQL tools
 ENV PATH="/usr/bin:$PATH"
 
 RUN which pg_config && pg_config --version
@@ -69,13 +69,13 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 COPY . .
 
 
-# ---------- Frontend build ko Laravel ke public/build mein lao ----------
+# ---------- Frontend build ----------
 COPY --from=frontend /app/public/build ./public/build
 
 
-# ---------- Production PHP dependencies ----------
+# ---------- Composer dependencies ----------
+# --no-dev hata diya hai taake Faker aur seeders available rahen
 RUN composer install \
-    # --no-dev \
     --optimize-autoloader \
     --no-interaction
 
@@ -96,9 +96,9 @@ COPY docker/start.sh /start.sh
 RUN chmod +x /start.sh
 
 
-# ---------- Port ----------
+# ---------- Render port ----------
 EXPOSE 10000
 
 
-# ---------- Start Laravel + Nginx ----------
+# ---------- Start ----------
 CMD ["/start.sh"]
