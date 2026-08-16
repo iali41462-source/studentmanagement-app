@@ -39,6 +39,7 @@ RUN apk add --no-cache \
     bcmath \
     intl \
     zip \
+     postgresql-dev \
     opcache \
     && docker-php-ext-configure gd \
     --with-freetype \
