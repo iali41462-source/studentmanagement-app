@@ -75,7 +75,7 @@ COPY --from=frontend /app/public/build ./public/build
 
 # ---------- Production PHP dependencies ----------
 RUN composer install \
-    --no-dev \
+    # --no-dev \
     --optimize-autoloader \
     --no-interaction
 
