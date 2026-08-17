@@ -131,11 +131,11 @@
                 </div>
 
 @endsection --}}
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html>
 <head>
     <title>Students</title>
-
+     @viteReactRefresh
     @vite(['resources/css/app.css', 'resources/js/app.jsx'])
 </head>
 
@@ -144,4 +144,12 @@
     <div id="react-app"></div>
 
 </body>
-</html>
+</html> --}}
+@extends('layouts.layout')
+
+@section('content')
+
+    {{-- React app yahan load hoga --}}
+    <div id="react-app"></div>
+
+@endsection

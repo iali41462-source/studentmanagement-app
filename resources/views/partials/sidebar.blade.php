@@ -1,13 +1,34 @@
-      <div class="col-md-3">
+<div class="col-md-2 margin-bottom-20">
 
-                    <div class="sidebar">
-                    <a class="active" href="#home">Home</a>
-                    <a href="{{ route('courses.create') }}">Cources</a>
-                    <a href="{{ route('students.create') }}">Student</a>
-                    <a href="{{ route('teachers.create') }}">Teacher</a>
-                    <a href="{{ route('courses.create') }}">Courses</a>
-                    <a href="{{ route('batches.create') }}">Batches</a>
-                    <a href="{{ route('enrollments.create') }}">Enrollment</a>
-                    <a href="{{ route('payments.create') }}">Payment</a>
-                    </div>
-            </div>
+    <div class="sidebar shadow-sm">
+
+        <a href="{{ url('/') }}">
+            🏠 Dashboard
+        </a>
+
+        <a href="{{ route('students.index') }}">
+            👨‍🎓 Students
+        </a>
+        <a href="{{ route('teachers.index') }}">
+            👨‍🏫 Teachers
+        </a>
+
+        <a href="{{ route('courses.index') }}">
+            📚 Courses
+        </a>
+
+        <a href="{{ route('batches.index') }}">
+            🏫 Batches
+        </a>
+
+        <a href="{{ route('enrollments.index') }}">
+            📝 Enrollments
+        </a>
+
+        <a href="{{ route('payments.index') }}">
+            💰 Payments
+        </a>
+
+    </div>
+
+</div>

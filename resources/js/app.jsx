@@ -288,7 +288,7 @@ const handleStudentClick = useCallback((student) => {
 
                     <div className="card-header">
 
-                        <h4 className="mb-0">
+                        <h4  className="mb-0 text-center">
                             Student List
                         </h4>
 
