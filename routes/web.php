@@ -11,6 +11,7 @@ use App\Http\Controllers\EnrollmentController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\Auth\RegisterController;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,12 @@ use App\Http\Controllers\Auth\RegisterController;
 Route::get('/', function () {
      return redirect()->route('login');
 
+});
+Route::get('/check-students', function () {
+    return response()->json([
+        'students_count' => DB::table('students')->count(),
+        'students' => DB::table('students')->get(),
+    ]);
 });
 Route::middleware('guest')->group(function () {
 
