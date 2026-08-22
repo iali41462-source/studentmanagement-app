@@ -1,33 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> --}}
-    {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"> --}}
-    {{-- <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script> --}}
-    {{-- <title>Student Management System</title> --}}
-
-    {{-- new code  --}}
-    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Student Management System</title>
     @viteReactRefresh
     @vite(['resources/css/app.css', 'resources/js/app.jsx'])
-
-</head>
-    {{-- end new code  --}}
-
-
     <style>
 body {
     margin: 0;
     padding: 0;
     background: #f5f6f8;
     overflow-x: hidden
+}
+/* navbar */
+.navbar-sidha {
+   margin-left: auto;
+   padding-right: 10px;
 }
 .dashboard {
     display: flex;
@@ -37,16 +28,14 @@ body {
     flex: 1;
     padding: 25px;
     min-width: 0;
+    text-align: center;
 }
-
 
 .sidebar {
     width: 220px;
     height: 100%;
     background: #212529;
-    flex-shrink: 0;
 }
-
 .sidebar-title {
     color: white;
     font-size: 18px;
@@ -54,13 +43,6 @@ body {
     padding: 20px 16px;
     border-bottom: 1px solid #343a40;
 }
-/* navbar */
-.navbar-sidha {
-   margin-left: auto;
-   padding-right: 10px;
-}
-
-
 /* Sidebar links */
 
 .sidebar a {
@@ -80,27 +62,18 @@ body {
     color: white;
 }
 
-/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
-div.content {
-  margin-left: 200px;
-  padding: 1px 16px;
-  height: 1000px;
-}
 /* footer  */
 .footer {
     background: #212529;
     color: #adb5bd;
     padding: 20px 30px;
     border-top: 1px solid #343a40;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     width: 100%;
     box-sizing: border-box;
 }
-
 .footer-left {
     display: flex;
     align-items: center;
@@ -146,36 +119,48 @@ div.content {
 }
 
 /* Mobile */
-@media (max-width: 768px) {
-
-
-}
 
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
 @media screen and (max-width: 700px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-  .sidebar a {float: left;}
-  div.content {margin-left: 0;}
-   .footer {
+    .dashboard {
+        flex-direction: column;
+        border: 10px solid pink !important;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .sidebar a {
+        float: left;
+    }
+
+    .footer {
         flex-direction: column;
         gap: 15px;
         text-align: center;
     }
-
-    .footer-left {
-        justify-content: center;
-    }
-
-    .footer-right {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
 }
+/* on screen ipad */
+@media screen and (min-width: 701px) and (max-width: 1024px) {
 
+    .dashboard {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+    }
+
+    .main-content {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+}
 /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
 @media screen and (max-width: 400px) {
   .sidebar a {
@@ -183,13 +168,14 @@ div.content {
     float: none;
   }
 }
-
-
     </style>
 
 </head>
 <body>
-       @include('partials.navbar')
+    <div>
+               @include('partials.navbar')
+               </div>
+
 
     <div class="dashboard">
 

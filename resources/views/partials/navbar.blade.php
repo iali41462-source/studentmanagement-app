@@ -1,15 +1,19 @@
-<div class="row">
-    <div class="col-md-12">
+{{-- <div class="row">
+    <div class="col-md-12"> --}}
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
 
-            {{-- Logo / Brand --}}
-            <a class="navbar-brand fw-bold" href="{{ url('/') }}">
+            <div class="col-sm-6">
+               <a class="navbar-brand fw-bold" href="{{ url('/') }}">
                 🎓 Student Management
             </a>
+             </div>
+            {{-- Logo / Brand --}}
+
 
             {{-- Mobile button --}}
-            <button
+            <div>
+                  <button
                 class="navbar-toggler"
                 type="button"
                 data-toggle="collapse"
@@ -20,6 +24,9 @@
             >
                 <span class="navbar-toggler-icon"></span>
             </button>
+            </div>
+
+
 
             <div class="collapse navbar-collapse" id="navbarContent">
 
@@ -77,4 +84,4 @@
         </nav>
 
     </div>
-</div>
+
